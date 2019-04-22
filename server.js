@@ -28,8 +28,8 @@ app.get('/', (req, res) => {
 	res.send(database.users);
 })
 
-app.listen(3050, () => {
-	console.log('App is working on port 3050');
+app.listen(process.env.PORT || 3050, () => {
+	console.log(`app is working on port ${process.env.PORT}`);
 })
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt)})
